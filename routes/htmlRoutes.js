@@ -24,4 +24,20 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+  // Load charcter select
+  app.get("/party/:id", function(req, res) {
+    console.log("party id");
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("party", {
+        msg: "Choose your party",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/party", function(req, res) {
+    console.log("party");
+    res.render("party");
+  });
 };

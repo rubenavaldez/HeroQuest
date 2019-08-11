@@ -9,9 +9,26 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: 'Josefin Slab', serif;
+/* font-family: 'Lobster', cursive;
+font-family: 'Josefin Slab', serif;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Anton', sans-serif; */
 }
 
 h1 {
   
   text-shadow: 2px 2px #272121;
+}
+
+#firepit {
+  background-color: black;
+  background: url("https://i.imgur.com/ljI7J78.gif") no-repeat center center fixed; 
+}
+
+.btn-large {
+  font-family: 'Josefin Slab', serif;
+}
+h1,h2 {
+  font-family: 'Niconne', cursive;
 }
