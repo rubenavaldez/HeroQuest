@@ -20,7 +20,24 @@ module.exports = function(app) {
     });
   });
 
+  // Load charcter select
+  app.get("/party/:id", function(req, res) {
+    console.log("party id");
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("party", {
+        msg: "Choose your party",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/party", function(req, res) {
+    console.log("party");
+    res.render("party", {});
+  });
+
   // Render 404 page for any unmatched routes
+  //must be last in the code 
   app.get("*", function(req, res) {
     res.render("404");
   });

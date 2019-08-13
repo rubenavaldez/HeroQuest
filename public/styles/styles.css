@@ -1,3 +1,66 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+background: black;
+ 
+  font-family: 'Josefin Slab', serif;
+/* font-family: 'Lobster', cursive;
+font-family: 'Josefin Slab', serif;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Anton', sans-serif; */
+}
+
+h1 {
+  
+  text-shadow: 2px 2px #272121;
+}
+
+#firepit {
+  background-color: black;
+  background: url("https://i.imgur.com/ljI7J78.gif") no-repeat center center fixed; 
+}
+
+.btn-large {
+  font-family: 'Josefin Slab', serif;
+}
+h1,h2, .brand-logo {
+  font-family: 'Niconne', cursive;
+}
+
+.landing{
+  position: absolute;
+  top: 60px; /* Header Height */
+  bottom: 0px; /* Footer Height */
+  width: 100%;
+  
+}
+
+#home{
+  
+  background: url("https://i.imgur.com/tYKscBZ.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#firpit{
+ 
+  background: url("https://i.imgur.com/ljI7J78.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#error-screen {
+  
+  background: url("https://i.imgur.com/llSgMO5.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
