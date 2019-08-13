@@ -12,7 +12,7 @@ font-family: 'Fredericka the Great', cursive;
 font-family: 'Anton', sans-serif; */
 }
 
-h1,p {
+h1, .story {
   
   text-shadow: 2px 2px #272121;
 }
@@ -83,3 +83,7 @@ h1,h2, .brand-logo {
 
 }
 
+.party-image {
+  height: 500px;
+  width: 1000px;
+}
