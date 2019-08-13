@@ -12,7 +12,7 @@ font-family: 'Fredericka the Great', cursive;
 font-family: 'Anton', sans-serif; */
 }
 
-h1 {
+h1, .story {
   
   text-shadow: 2px 2px #272121;
 }
@@ -63,4 +63,27 @@ h1,h2, .brand-logo {
   -o-background-size: cover;
   background-size: cover;
 
+}
+#campaign {
+  
+  background: url("https://i.imgur.com/rsLOLUJ.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+#game {
+  
+  background: url("https://i.imgur.com/eNstYNZ.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.party-image {
+  height: 500px;
+  width: 1000px;
 }

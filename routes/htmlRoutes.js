@@ -36,6 +36,15 @@ module.exports = function(app) {
     res.render("party", {});
   });
 
+  app.get("/game", function(req, res) {
+    console.log("game");
+    res.render("game", {});
+  });
+  app.get("/campaign", function(req, res) {
+    console.log("campaign");
+    res.render("campaign", {});
+  });
+
   // Render 404 page for any unmatched routes
   //must be last in the code 
   app.get("*", function(req, res) {
