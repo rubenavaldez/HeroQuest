@@ -20,11 +20,6 @@ module.exports = function(app) {
     });
   });
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
-
   // Load charcter select
   app.get("/party/:id", function(req, res) {
     console.log("party id");
@@ -38,6 +33,12 @@ module.exports = function(app) {
 
   app.get("/party", function(req, res) {
     console.log("party");
-    res.render("party");
+    res.render("party", {});
+  });
+
+  // Render 404 page for any unmatched routes
+  //must be last in the code 
+  app.get("*", function(req, res) {
+    res.render("404");
   });
 };
