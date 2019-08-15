@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Monkey",
-    "database": "exampledb",
+    "database": "heroquest",
     "host": "localhost",
     "dialect": "mysql"
   },
