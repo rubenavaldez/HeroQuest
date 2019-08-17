@@ -8,7 +8,6 @@ module.exports = function(app) {
         msg: "Welcome!",
         Characters: dbCharacters
       });
-      console.log(Characters);
     });
   });
 
@@ -38,6 +37,7 @@ module.exports = function(app) {
         msg: "Choose Your Hero!",
         Characters: dbCharacters
       });
+      console.log(dbCharacters);
     });
   });
   // app.get("/party", function(req, res) {
