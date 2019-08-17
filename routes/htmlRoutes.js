@@ -46,8 +46,30 @@ module.exports = function(app) {
 
   app.get("/game", function(req, res) {
     console.log("game");
-    res.render("game", {});
+    db.Characters.findAll({}).then(function(dbCharacters) {
+      res.render("game", {
+        Characters: dbCharacters
+      });
+    });
   });
+  app.get("/game", function(req, res) {
+    console.log("game");
+    db.Enemies.findAll({}).then(function(dbEnemies) {
+      res.render("game", {
+        Enemies: dbEnemies
+      });
+    });
+  });
+  app.get("/game", function(req, res) {
+    console.log("game");
+    db.Players.findAll({}).then(function(dbPlayers) {
+      res.render("game", {
+        Players: dbPlayers
+      });
+    });
+  });
+
+  
   app.get("/campaign", function(req, res) {
     console.log("campaign");
     res.render("campaign", {});
