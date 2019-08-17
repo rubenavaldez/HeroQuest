@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
-      defaultValue: sequelize.literal("CURRENT_TIMESTAMP") 
+      defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
     },
     updatedAt: {
       allowNull: false,
@@ -24,5 +24,11 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
     }
   });
+
+  Characters.associate = function(models) {
+    Characters.hasMany(models.Players, {
+      onDelete: "cascade"
+    });
+  };
   return Characters;
 };

@@ -2,6 +2,7 @@
 
   {{!-- <h1>{{msg}}</h1> --}}
   <h2 class="white-text center">{{msg}}</h2>
+  <div class="row" style="margin-bottom: 500px"></div>
   <div class="row">
     {{#each Characters}}
    
@@ -9,11 +10,15 @@
       <div class="card">
 
         <div class="card-image red">
-          <img src="{{image_idle}}" style="min-height:300.6px">
+          <img src="{{image_idle}}" style="min-height:300.6px;">
           <span class="card-title">{{name}}</span>
         </div>
         <div class="card-content">
           <p>{{bio}} db bio</p>
+          <p>Health: {{health}}</p>
+          <p>Strength: {{strength}}</p>
+          <p>Defense:{{defense}}</p>
+          
         </div>
         <div class="card-action">
           {{!-- <button class="btn-large green recruit-button" value="{{id}}">Recruit</button> --}}

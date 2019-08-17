@@ -15,6 +15,17 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/api/recruit/:id", function(req, res) {
+    // db.Players.create(req.body.id).then(function(dbPlayers) {
+    console.log(req.body);
+    db.Players.create({
+      CharacterId: req.params.id
+    }).then(function(dbPlayers) {
+      // res.json(dbPlayers);
+      res.redirect("../../campaign");
+    });
+  });
+
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
