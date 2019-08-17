@@ -8,6 +8,7 @@ module.exports = function(app) {
         msg: "Welcome!",
         Characters: dbCharacters
       });
+      console.log(Characters);
     });
   });
 
@@ -17,6 +18,7 @@ module.exports = function(app) {
       res.render("Characters", {
         Characters: dbCharacters
       });
+      
     });
   });
 
@@ -30,11 +32,18 @@ module.exports = function(app) {
       });
     });
   });
-
   app.get("/party", function(req, res) {
-    console.log("party");
-    res.render("party", {});
+    db.Characters.findAll({}).then(function(dbCharacters) {
+      res.render("party", {
+        msg: "Choose Your Hero!",
+        Characters: dbCharacters
+      });
+    });
   });
+  // app.get("/party", function(req, res) {
+  //   console.log("party");
+  //   res.render("party", {});
+  // });
 
   app.get("/game", function(req, res) {
     console.log("game");
