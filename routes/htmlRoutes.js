@@ -37,7 +37,7 @@ module.exports = function(app) {
         msg: "Choose Your Hero!",
         Characters: dbCharacters
       });
-      console.log(dbCharacters);
+      // console.log(dbCharacters);
     });
   });
   // app.get("/party", function(req, res) {
