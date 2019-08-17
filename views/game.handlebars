@@ -1,5 +1,61 @@
 <div id="game" class="landing">
-  
+
+    <div class="row game-row">
+
+        <div class="col l6">
+            {{#each Characters}}
+            
+            <div class="col s1 idle player">
+
+                <img class="player{{id}}-idle idle player" src="{{image_idle}}" style="min-height:300.6px;">
+
+
+            </div>
+            <div class="col s1 death">
+                <img class="player{{id}}-death" src="{{image_death}}" style="min-height:300.6px;">
+            </div>
+            
+            {{/each}}
+
+            <div class="enemy-attack"></div>
+        </div>
+        <div class="col l6">
+            {{#each Characters}}
+
+            <div class="col s1">
+
+                <img class="player{{id}}-attack attack" src="{{image_attack}}" style="min-height:300.6px;">
+
+
+            </div>
+            {{/each}}
+
+
+        </div>
+
+    </div>
+
+</div>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/materialize.js"></script>
+<script src="/js/jquery.js"></script>
