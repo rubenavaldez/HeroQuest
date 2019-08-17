@@ -11,8 +11,24 @@ module.exports = function(sequelize, DataTypes) {
     // eslint-disable-next-line camelcase
     image_death: DataTypes.STRING,
     health: DataTypes.INTEGER,
-    stength: DataTypes.INTEGER,
-    defense: DataTypes.INTEGER
+    strength: DataTypes.INTEGER,
+    defense: DataTypes.INTEGER,
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal("CURRENT_TIMESTAMP")
+    }
   });
+
+  Characters.associate = function(models) {
+    Characters.hasMany(models.Players, {
+      onDelete: "cascade"
+    });
+  };
   return Characters;
 };
