@@ -39,37 +39,35 @@ module.exports = function(app) {
       // console.log(dbCharacters);
     });
   });
-  // app.get("/party", function(req, res) {
-  //   console.log("party");
-  //   res.render("party", {});
-  // });
 
   app.get("/game", function(req, res) {
     console.log("game");
-    db.Characters.findAll({}).then(function(dbCharacters) {
+    // var query = {};
+    // if (req.query.author_id) {
+    //   query.AuthorId = req.query.author_id;
+    // }
+    var query = {};
+    if (req.params.id) {
+      query = req.params.id;
+    } else {
+      console.log("default is three");
+      query = 3;
+    }
+
+    console.log(query);
+    db.Players.findOne({
+      where: {
+        id: query
+      },
+      include: [db.Characters]
+    }).then(function(dbCharacters, dbEnemies) {
       res.render("game", {
-        Characters: dbCharacters
-      });
-    });
-  });
-  app.get("/game", function(req, res) {
-    console.log("game");
-    db.Enemies.findAll({}).then(function(dbEnemies) {
-      res.render("game", {
+        Characters: dbCharacters,
         Enemies: dbEnemies
       });
     });
   });
-  app.get("/game", function(req, res) {
-    console.log("game");
-    db.Players.findAll({}).then(function(dbPlayers) {
-      res.render("game", {
-        Players: dbPlayers
-      });
-    });
-  });
 
-  
   app.get("/campaign", function(req, res) {
     console.log("campaign");
     res.render("campaign", {});
