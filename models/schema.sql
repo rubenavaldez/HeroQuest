@@ -19,6 +19,9 @@ image_death varchar(50),
 health integer(10),
 strength INTEGER(10),
 defense INTEGER(10),
+monster BOOLEAN,
+alive BOOLEAN,
+turn BOOLEAN,
 createdAt timestamp default	current_timestamp,
 updatedAt timestamp default current_timestamp
 );
