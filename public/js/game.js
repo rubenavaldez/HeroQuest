@@ -13,7 +13,7 @@ playerTwo = {
   name: name,
   health: 100,
   power: 10,
-  alive: true,
+  alive: false,
   turn: false,
   monster: false
 };
@@ -22,7 +22,7 @@ playerThree = {
   name: name,
   health: 100,
   power: 10,
-  alive: true,
+  alive: false,
   turn: false,
   monster: false
 };
@@ -147,17 +147,22 @@ function target() {
 //choose what you want to that character.
 function action() {
 
+var whosTurn = party[currentTurn]
+
     console.log("action")
 
-  if (monster === true) {
+  if(whosTurn.monster === true) {
     choice === Math.ceiling(Math.random() * 2);
 
     switch (choice) {
       case 1:
         attack();
+        console.log("that SOB attacked!")
+
         break;
 
       case 2:
+        console.log("that SOB healed!")
         recover();
         break;
       //*BONUS 3 would be for special ability.
@@ -169,7 +174,7 @@ function action() {
     }
   } else {
 
-choice = $("#action-btn").val().trim();
+choice = $("#action-btn").val();
 
     switch (choice) {
       case "attack":
@@ -194,7 +199,7 @@ function attack() {
 
   console.log("attack")
 
-  if (monster === true) {
+  if (whosTurn === true) {
     switch (ranNum) {
       case 1:
         break;
