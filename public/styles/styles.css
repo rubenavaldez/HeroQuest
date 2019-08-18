@@ -75,7 +75,7 @@ h1,h2, .brand-logo {
 }
 #game {
   
-  background: url("https://i.imgur.com/eNstYNZ.gif") no-repeat center center fixed; 
+  background: url("https://i.imgur.com/Ul1aJyw.png") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -83,4 +83,24 @@ h1,h2, .brand-logo {
 
 }
 
+
+
+.game-row {
+  position:fixed;
+  bottom:0px;
+  position: relative;
+}
+
+.player {
+  position: absolute;
+  overflow: visible;
+  margin-left:15px; 
+} 
+.death {
+  position: relative;
+  left:100;
+
+  overflow: visible;
+
+}
   
