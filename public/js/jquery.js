@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 var interval;
 $(".death").hide();
+$(".heal").hide();
 $(document).ready(function() {
   console.log("jQuery");
   $(".attack").hide();
   $(".death").hide();
-  queryURL = "/api/enemies";
+  $(".heal").hide();
 });
 
 var health = parseInt($(".active", this).attr("data-health"));
@@ -23,6 +24,10 @@ $(document).on("click", "#action-btn", function() {
     $(".idle").hide();
     $(".attack").show();
     setTimeout(attackAnimation, 1000);
+  } else if ($(this).attr("value") === "recover") {
+    console.log("recovering");
+    $(".heal").show();
+    setTimeout(healAnimation, 2000);
   }
 });
 
@@ -34,3 +39,18 @@ function attackAnimation() {
 $(document).on("click", "#start-game", function() {
   console.log($(this).attr("value"));
 });
+
+function healAnimation() {
+  $(".heal").hide();
+}
+
+function enemyAttack(){
+  $(".enemy-idle").hide();
+  $(".enemy-attack").show();
+  setTimeout(enemyAttackAnimation, 2000);
+}
+
+function enemyAttackAnimation (){
+  $(".enemy-idle").show();
+  $(".enemy-attack").hide();
+}

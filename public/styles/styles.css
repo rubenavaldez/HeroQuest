@@ -103,4 +103,8 @@ h1,h2, .brand-logo {
   overflow: visible;
 
 }
-  
+  .heal {
+    position: relative;
+    top: 160px;
+    left: 250px;
+  }
