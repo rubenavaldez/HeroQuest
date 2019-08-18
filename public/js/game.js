@@ -152,7 +152,7 @@ var whosTurn = party[currentTurn]
     console.log("action")
 
   if(whosTurn.monster === true) {
-    choice === Math.ceiling(Math.random() * 2);
+    choice === Math.ceil(Math.random() * 2);
 
     switch (choice) {
       case 1:
@@ -227,13 +227,11 @@ function recover() {
 }
 
 function diceRoll() {
-  ranNum = Math.ceiling(Math.floor() * 20);
+  ranNum = Math.floor() * 20;
 }
-
 
 battle();
 
-function updateStats(){
-
-  console.log("updated")
+function updateStats() {
+  console.log("updated");
 }
