@@ -17,7 +17,17 @@
             
             {{/each}}
 
-            <div class="enemy-attack"></div>
+            <div class="enemy-attack">
+                {{#each Enemies}}
+                <div class="col s1 idle enemy">
+
+                <img class="enemy{{id}}-idle enemy-attack enemy" src="{{image_attack}}" style="min-height:300.6px;">
+
+
+            </div>
+
+                {{/each}}
+            </div>
         </div>
         <div class="col l6">
             {{#each Characters}}
