@@ -50,7 +50,7 @@ function enemyAttack(){
   setTimeout(enemyAttackAnimation, 2000);
 }
 
-function enemyAttackAnimation (){
+function enemyAttackAnimation() {
   $(".enemy-idle").show();
   $(".enemy-attack").hide();
 }

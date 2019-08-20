@@ -20,12 +20,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
   };
-  Players.associate = function(models) {
-    Players.hasOne(models.CurrentGame, {
-      as: "CurrentPlayerId",
-      foreignKey: "CurrentGameId"
-    });
-  };
+  // Players.associate = function(models) {
+  //   Players.hasOne(models.CurrentGame, {
+  //     as: "CurrentPlayerId",
+  //     foreignKey: "CurrentGameId"
+  //   });
+  // };
 
   return Players;
   // console.log(Players)
