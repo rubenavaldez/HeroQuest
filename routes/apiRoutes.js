@@ -2,11 +2,24 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/enemies", function(req, res) {
-    db.Enemies.findAll({}).then(function(dbEnemies) {
-      // res.json(dbEnemies);
+  app.get("/api/enemies/:id", function(req, res) {
+    var query = {};
+    if (req.params.id) {
+      query = req.params.id;
+    } else {
+      console.log("default is one");
+      query = 1;
+    }
+    console.log(req.params)
+    db.Enemies.findOne({
+      where: {
+        id: query
+      }
+    }).then(function(req) {
+      res.json(req);
+      // res.json(response);
       // console.log(res.json(dbEnemies));
-      res.redirect("../../game");
+      // res.redirect("../../game");
     });
   });
 
@@ -17,12 +30,19 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/enemies", function(req, res) {
-    db.Enemies.findAll({}).then(function() {
-      // res.json(dbPlayers);
-      res.redirect("../../game");
-    });
-  });
+  // app.get("/api/enemies/:id", function(req, res) {
+  //   db.Enemies.findAll({}).then(function() {
+  //     // res.json(dbEnemies);
+  //     // res.redirect("../../game");
+  //   });
+  // });
+
+  // app.get("/api/enemies/", function(req, res) {
+  //   db.Enemies.findAll({}).then(function(req) {
+  //     res.json(req);
+  //     res.redirect("../../game");
+  //   });
+  // });
 
   app.post("/api/recruit/:id", function(req, res) {
     console.log(req.body);
