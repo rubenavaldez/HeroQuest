@@ -1,5 +1,8 @@
 //import { start } from "repl";
 
+
+//CHANGE
+
 playerOne = {
   name: name,
   health: 100,
@@ -45,8 +48,22 @@ currentTurn = 0;
 
 ranNum = null;
 
+
+
+
+//ON LISTEN RUN battle();
+
+
+
+
+
 //function to update the game stats(health, alive/dead) in player object and
 //in the created mySQL game.
+
+function updateStats(){
+
+  console.log("updated")
+}
 
 
 //function that changes the player/monster turn through the party array.
@@ -232,6 +249,8 @@ function diceRoll() {
 
 battle();
 
+
 function updateStats() {
   console.log("updated");
 }
+
