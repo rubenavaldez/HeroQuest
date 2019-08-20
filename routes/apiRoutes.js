@@ -15,8 +15,8 @@ module.exports = function(app) {
       where: {
         id: query
       }
-    }).then(function(response,err) {
-      console.log(response);
+    }).then(function(req) {
+      res.json(req);
       // res.json(response);
       // console.log(res.json(dbEnemies));
       // res.redirect("../../game");
@@ -37,12 +37,12 @@ module.exports = function(app) {
   //   });
   // });
 
-  app.get("/api/enemies", function(req, res) {
-    db.Enemies.findAll({}).then(function() {
-      res.json(dbEnemies);
-      // res.redirect("../../game");
-    });
-  });
+  // app.get("/api/enemies/", function(req, res) {
+  //   db.Enemies.findAll({}).then(function(req) {
+  //     res.json(req);
+  //     res.redirect("../../game");
+  //   });
+  // });
 
   app.post("/api/recruit/:id", function(req, res) {
     console.log(req.body);

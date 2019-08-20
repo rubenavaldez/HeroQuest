@@ -74,7 +74,7 @@ h1,h2, .brand-logo {
 
 }
 #game {
-  
+  /* dragon wallpaper https://i.imgur.com/RkA4J1m.gif */
   background: url("https://i.imgur.com/Ul1aJyw.png") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
