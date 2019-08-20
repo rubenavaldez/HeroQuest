@@ -183,15 +183,17 @@ function action() {
       break;
     }
   } else {
-    $("action").on("click", function() {
+    $("#action-btn").on("click", function() {
             choice = $("#action-btn").val();
 
         switch (choice) {
         case "attack":
         attack();
+        console.log("KILL")
           break;
 
         case "recover":
+          console.log("HEAL")
           recover();
           break;
         //*BONUS 3 would be for special ability.
