@@ -1,6 +1,5 @@
 //import { start } from "repl";
 
-
 //CHANGE
 
 playerOne = {
@@ -48,31 +47,22 @@ currentTurn = 0;
 
 ranNum = null;
 
-whosTurn = party[currentTurn]
-
-
-
+whosTurn = party[currentTurn];;
 
 //ON LISTEN RUN battle();
-
-
-
-
 
 //function to update the game stats(health, alive/dead) in player object and
 //in the created mySQL game.
 
-function updateStats(){
-
-  console.log("updated")
+function updateStats() {
+  console.log("updated");;
 }
-
 
 //function that changes the player/monster turn through the party array.
 //checking whos turn it is and if the next person is alive for the turn.
 
-function changeTurn(){
-    console.log("change turn")
+function changeTurn() {
+  console.log("change turn");
 
   for (i = 0; i < party.length; i++) {
     if (party[i].turn == true) {
@@ -141,8 +131,7 @@ function battle() {
 //choice updates stats and plays animation and makes next choice.
 
 function turn() {
-
-    console.log("turn")
+  console.log("turn");;
 
   //choose character, update status to Ready.
 
@@ -165,72 +154,72 @@ function target() {
 
 //choose what you want to that character.
 function action() {
+  whosTurn = party[currentTurn];;
 
- whosTurn = party[currentTurn]
+  console.log("action");
 
-    console.log("action")
-
-  if(whosTurn.monster === true) {
+  if (whosTurn.monster === true) {
     choice === Math.ceil(Math.random() * 2);
 
     switch (choice) {
-      case 1:
-        attack();
-        console.log("that SOB attacked!")
+    case 1:
+      attack();
+      console.log("that SOB attacked!");;
 
-        break;
+      break;
 
-      case 2:
-        console.log("that SOB healed!")
-        recover();
-        break;
+    case 2:
+      console.log("that SOB healed!");;
+      recover();
+      break;
       //*BONUS 3 would be for special ability.
-      case 3:
-        break;
-      default:
-        console.log("It didn't work you muppit");
-        break;
+    case 3:
+      break;
+    default:
+      console.log("It didn't work you muppit");
+      break;
     }
   } else {
+    $("action").on("click", function() {
+            choice = $("#action-btn").val();
 
-choice = $("#action-btn").val();
-
-    switch (choice) {
-      case "attack":
+        switch (choice) {
+        case "attack":
         attack();
-        break;
+          break;
 
-      case "recover":
-        recover();
-        break;
-      //*BONUS 3 would be for special ability.
-      case 3:
-        break;
-      default:
-        console.log("It didn't work you muppit");
-        break;
+        case "recover":
+          recover();
+          break;
+        //*BONUS 3 would be for special ability.
+        case 3:
+          break;
+        default:
+          console.log("It didn't work you muppit");
+          break;
+        }
+      });;
     }
-  }
 }
 
 function attack() {
   diceRoll();
 
-  console.log("attack")
+  console.log("attack");;
 
   if (whosTurn === true) {
     switch (ranNum) {
-      case 1:
-        break;
-      case 2:
-        break;
-      case 3:
-        break;
-      case 4:
-        break;
-      default:
-        console.log("It didn't work you muppit");
-        break;
+    case 1:
+      break;
+    case 2:
+      break;
+    case 3:
+      break;
+    case 4:
+      break;
+    default:
+      console.log("It didn't work you muppit");
+      break;
     }
   } else {
   }
@@ -239,8 +228,7 @@ function attack() {
 }
 
 function recover() {
-
- console.log("recover")
+  console.log("recover");;
 
   changeTurn();
 }
@@ -249,6 +237,4 @@ function diceRoll() {
   ranNum = Math.ceil(Math.floor() * 20);
 }
 
-
 battle();
-
