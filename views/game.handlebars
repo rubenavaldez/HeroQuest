@@ -2,11 +2,12 @@
     <button id="action-btn" value="attack">attack you clown!</button>
 
     <button id="action-btn" value="recover">heal you clown!</button>
-    <p class="center-align">
-        <a id="start-game" href="/api/enemies/1" class="waves-effect waves-light btn-large red" value=1>
+    <button id="start-game" value="start">start</button>
+    {{!-- <p class="center-align">
+        <a id="start-game" href="" class="waves-effect waves-light btn-large red" value=1>
             <i class="material-icons right">flare</i>
             Start</a>
-    </p>
+    </p> --}}
     <div class="row game-row">
 
         <div class="col l6">
@@ -39,8 +40,8 @@
 
             {{/each}}
 
-            <div class="col s1">
-                {{#each Enemies}}
+            <div class="col s1 enemy-forward">
+                {{!-- {{#each Enemies}}
                 <div class="col s1 enemy-attack">
 
                     <img class="enemy{{id}}-idle enemy-attack enemy" src="{{image_attack}}" style="min-height:300.6px;">
@@ -48,7 +49,7 @@
 
                 </div>
 
-                {{/each}}
+                {{/each}} --}}
             </div>
         </div>
         <div class="col l6">
@@ -61,29 +62,29 @@
 
             </div>
             {{/each}}
-            {{#each Enemies}}
+            {{!-- {{#each Enemies}} --}}
 
-            <div class="col s1 enemy">
-
-
+            <div class="col s1 enemy enemy-visible-div">
 
 
 
 
 
 
+
+{{!-- 
                 <div class="enemy-idle"><img class="enemy{{id}}-idle idle enemy active" data-health={{health}}
                         data-strength={{strength}} data-defense={{defense}} src="{{image_idle}}"
                         style="min-height:300.6px;">
                 </div>
                 <div class="enemy-death">
                     <img class="player{{id}}-death" src="{{image_death}}" style="min-height:300.6px;">
-                </div>
+                </div>--}}
 
-            </div>
+            </div> 
 
 
-            {{/each}}
+            {{!-- {{/each}} --}}
 
         </div>
 

@@ -96,6 +96,10 @@ h1,h2, .brand-logo {
   overflow: visible;
   margin-left:15px; 
 } 
+.enemy {
+  position: absolute;
+  overflow: visible;
+}
 .death {
   position: relative;
   left:100;
