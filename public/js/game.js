@@ -48,6 +48,8 @@ currentTurn = 0;
 
 ranNum = null;
 
+whosTurn = party[currentTurn]
+
 
 
 
@@ -164,12 +166,12 @@ function target() {
 //choose what you want to that character.
 function action() {
 
-var whosTurn = party[currentTurn]
+ whosTurn = party[currentTurn]
 
     console.log("action")
 
   if(whosTurn.monster === true) {
-    choice === Math.ceiling(Math.random() * 2);
+    choice === Math.ceil(Math.random() * 2);
 
     switch (choice) {
       case 1:
@@ -244,7 +246,7 @@ function recover() {
 }
 
 function diceRoll() {
-  ranNum = Math.ceiling(Math.floor() * 20);
+  ranNum = Math.ceil(Math.floor() * 20);
 }
 
 
