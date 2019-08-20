@@ -103,6 +103,9 @@ function changeTurn() {
 
 //checks if the battle is over, if not it runs another turn.
 function battle() {
+
+
+  console.log("started")
   updateStats();
 
   //loop to add entire party health to check if they party has died.
@@ -198,7 +201,7 @@ function action() {
           console.log("It didn't work you muppit");
           break;
         }
-      });;
+      });
     }
 }
 
