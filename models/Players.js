@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 0
     }
   });
-//app crashed at this file association not working
+  //app crashed at this file association not working
   Players.associate = function(models) {
     Players.belongsTo(models.Characters, {
       foreignKey: {
@@ -20,21 +20,16 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
   };
+  // Players.associate = function(models) {
+  //   Players.hasOne(models.CurrentGame, {
+  //     as: "CurrentPlayerId",
+  //     foreignKey: "CurrentGameId"
+  //   });
+  // };
 
   return Players;
   // console.log(Players)
 };
-
-
-
-
-
-
-
-
-
-
-
 // module.exports = function(sequelize, DataTypes) {
 //   var Player = sequelize.define("Player", {
 //     name: DataTypes.STRING,

@@ -1,26 +1,17 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/enemies", function(req, res) {
-    db.Enemies.findAll({}).then(function(dbEnemies) {
-      // res.json(dbEnemies);
-      // console.log(res.json(dbEnemies));
-      res.redirect("../../game");
-    });
-  });
-
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
-
-  app.get("/api/enemies", function(req, res) {
-    db.Enemies.findAll({}).then(function() {
-      // res.json(dbPlayers);
-      res.redirect("../../game");
+  app.get("/api/enemies/", function(req, res) {
+    // var query = {};
+    // if (req.params.id) {
+    //   query = req.params.id;
+    // } else {
+    //   console.log("default is one");
+    //   query = 1;
+    // }
+    // console.log(req.params)
+    db.Enemies.findAll({}).then(function(req) {
+      res.json(req);
     });
   });
 
@@ -31,13 +22,6 @@ module.exports = function(app) {
     }).then(function(dbPlayers) {
       // res.json(dbPlayers);
       res.redirect("../../campaign");
-    });
-  });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
     });
   });
 };

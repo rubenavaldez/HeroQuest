@@ -1,3 +1,4 @@
+
 playerOne = {
   name: name,
   health: 100,
@@ -62,11 +63,11 @@ function action() {
     default:
       console.log("Mistakes were made");
       break;
-    }
- let enemyTurn  = window.setTimeout(function() {
+    };
+  var enemyTurn = window.setTimeout(function() {
       enemyChoice = Math.ceil(Math.random() * 2);
       console.log("MONSTER TURN");
-      switch (enemyChoice) {
+      switch (enemyTurn) {
       case 1:
         attack();
         break;
@@ -112,337 +113,411 @@ function updateStats() {
   }
 }
 
-function changeTurn() {
-  if (currentTurn == 0) {
-    currentTurn == 1;
-  } else {
-    currentTurn == 0;
-  }
-}
 
-function attack(){
+// function changeTurn() {
+//   if (currentTurn == 0) {
+//     currentTurn == 1;
 
-};
+// //listening for animation
+// //listen for  -  on player status:ready
+// //run turn();
+// //in turn function run target
+// //in target function, on player choice (button press), run choice(); function.
+// //choice updates stats and plays animation and makes next choice.
 
-function heal(){
+// function turn() {
+//   console.log("turn");
 
-};
+//   //choose character, update status to Ready.
 
+//   //update each player status.
 
+//   //target();
 
+//   action();
+// }
 
-//============= MULTIPLAYER CODE FOR FUTURE RELEASE==================================
-  
-//   party = [playerOne, enemy];
-  
-//   partyHealth = 100;
-  
-//   currentTurn = 0;
-  
-//   totalParty = 0;
-  
-//   ranNum = null;
-  
+// //choose character you to affect.
+
+// // function target() {
+// //   $("body").on("click", "#action-btn", function() {
+// //     choice = this.val();
+// //     console.log(choice);
+
+// //     action(choice);
+// //   });
+// // }
+
+// //choose what you want that character to do.
+// function action() {
 //   whosTurn = party[currentTurn];
-  
-//   newTurn = false;
-  
-//   choice = 1;
-  
-//   $("body").on("click", "#action-btn", function() {
-//     choice = this.val();
-//     console.log(choice);
 
-  //========FUTURE CODE FOR MULTIPLAYER=====================
+
+//   console.log("action");
+
+
+//   if (whosTurn.monster == true) {
+//     choice === Math.ceil(Math.random() * 2);
+//     console.log("MONSTER TURN");
+//     switch (choice) {
+//     case 1:
+//       attack();
+//       console.log("that SOB attacked!");
+
+//       break;
+
+//     case 2:
+//       console.log("that SOB healed!");
+//       recover();
+//       break;
+//       //*BONUS 3 would be for special ability.
+//     case 3:
+//       break;
+//     default:
+//       console.log("It didn't work you muppit");
+//       break;
+//     }
+
+//     changeTurn();
+// >>>>>>> 8cba4a45c2367a6315f2ccede522ae97ed2464d9
+//   } else {
+//     currentTurn == 0;
+//   }
+// }
+
+// function attack(){
+
+// };
+
+// function heal(){
+
+// };
+
+
+
+// <<<<<<< HEAD
+
+// //============= MULTIPLAYER CODE FOR FUTURE RELEASE==================================
   
-  //ON LISTEN RUN battle();
+// //   party = [playerOne, enemy];
   
-  //function to update the game stats(health, alive/dead) in player object and
-  //in the created mySQL game.
+// //   partyHealth = 100;
   
-  //function that changes the player/monster turn through the party array.
-  //checking whos turn it is and if the next person is alive for the turn.
+// //   currentTurn = 0;
   
-  // function changeTurn() {
-  //   console.log("change turn");
+// //   totalParty = 0;
   
-  //   for (i = 0; i < party.length; i++) {
-  //     console.log(i)
-  //     var playerTurn = party.length - 1;
-  //     if (party[i].turn == true) {
-  //       party[i].turn == false;
+// //   ranNum = null;
   
-  //       if (i == 3) {
-  //         for (i = 0; i < party.length; i++) {
-  //           if (party[i].alive == true && party[i].turn == false) {
-  //             party[i].turn == true;
-  //             currentTurn = i;
-  //             whosTurn = party[i]
-  //             console.log("monster turn code")
-  //             console.log(whosTurn)
-  //             break;
-  //           }
+// //   whosTurn = party[currentTurn];
   
-  //           break;
-  //         }
-  //       } else if (i < playerTurn) {
-  //         console.log(i)
+// //   newTurn = false;
   
-  //         var g = i + 1;
+// //   choice = 1;
   
-  //         for (k = g; k < party.length; k++) {
-  //           if (party[k].alive == true && party[k].turn == false) {
-  //             party[k].turn == true;
+// //   $("body").on("click", "#action-btn", function() {
+// //     choice = this.val();
+// //     console.log(choice);
+
+//   //========FUTURE CODE FOR MULTIPLAYER=====================
   
-  //             currentTurn == k;
-  //             whosTurn = party[k]
-  //             console.log(k)
-  //             console.log("player turn code")
-  //             console.log(whosTurn)
+//   //ON LISTEN RUN battle();
   
-  //             break;
-  //           }
-  //         }
+//   //function to update the game stats(health, alive/dead) in player object and
+//   //in the created mySQL game.
   
-  //         break;
-  //       }
-  //     }
-  //   }
+//   //function that changes the player/monster turn through the party array.
+//   //checking whos turn it is and if the next person is alive for the turn.
   
-  // //   battle();
+//   // function changeTurn() {
+//   //   console.log("change turn");
   
-  // // }
-  // //if alive = true, turn = true else
-  // function changeTurn() {
-  //   if (currentTurn === 0){
-  //       currentTurn = 1;
-  //   }else{
-  //       currentTurn = 0;
-  //   }
+//   //   for (i = 0; i < party.length; i++) {
+//   //     console.log(i)
+//   //     var playerTurn = party.length - 1;
+//   //     if (party[i].turn == true) {
+//   //       party[i].turn == false;
   
-      //   for (j = 0; j < party.length; j++) {
-      //     if (party[j].turn == true) {
-      //       totalParty = party.length - 1;
-      //       party[j].turn == false;
-      //       if (j == totalParty) {
-      //         console.log("check 1")
-      //         for (k = 0; k < party.length; k++) {
-      //           if (party[k].alive == true) {
-      //             party[k].turn == true;
-      //             currentTurn == k;
-      //             newTurn == true;
-      //             console.log("check 2")
-      //             break;
-      //           }
-      //         }
-      //         if(newTurn == true){
-      //           console.log("check 3")
-      //         newTurn == false;
-      //         break;
-      //         }
+//   //       if (i == 3) {
+//   //         for (i = 0; i < party.length; i++) {
+//   //           if (party[i].alive == true && party[i].turn == false) {
+//   //             party[i].turn == true;
+//   //             currentTurn = i;
+//   //             whosTurn = party[i]
+//   //             console.log("monster turn code")
+//   //             console.log(whosTurn)
+//   //             break;
+//   //           }
   
-      //       }
+//   //           break;
+//   //         }
+//   //       } else if (i < playerTurn) {
+//   //         console.log(i)
   
-      //     } else{
-      //       console.log("check 5")
-      //       var checkNext = j + 1;
-      //       for(m = checkNext; m < party.length; m++){
-      //         console.log("check 5.1")
-      //         if (party[m].alive == true) {
-      //           console.log("check 6")
-      //           party[m].turn == true;
-      //           currentTurn == m;
-      //           newTurn == true;
-      //           break;
-      //         }else if(party[totalParty].alive == false){
-      //           console.log("check 7")
-      //           for (p = 0; p < party.length; p++) {
-      //             console.log("check 8")
-      //             if (party[p].alive == true) {
-      //               console.log("check 9")
-      //               party[p].turn == true;
-      //               currentTurn == p;
-      //               newTurn == true;
-      //               break;
-      //               }
-      //            }
-      //         }
-      //       }
-      //       if(newTurn == true){
-      //         console.log("check 10")
-      //         newTurn == false;
-      //         break;
-      //     }
-      //   }
-      // }
-      //   console.log("Whos Turn:" + currentTurn);
-  //     console.log;;
-  // //   battle();
-  // // }
+//   //         var g = i + 1;
   
-  // //checks if the battle is over, if not it runs another turn.
-  // function battle() {
-  //   console.log("started");
-  //   updateStats();
+//   //         for (k = g; k < party.length; k++) {
+//   //           if (party[k].alive == true && party[k].turn == false) {
+//   //             party[k].turn == true;
   
-  //   //loop to add entire party health to check if they party has died.
-  //   //allows for expansion of the part to more than 3 characters in the future.
+//   //             currentTurn == k;
+//   //             whosTurn = party[k]
+//   //             console.log(k)
+//   //             console.log("player turn code")
+//   //             console.log(whosTurn)
   
-  //   for (k = 0; k < party.length - 1; k++) {
-  //     partyHealth += party[k].health;
-  //   }
-  //   totalParty == party.length - 1;
-  //   enemyHealth = party[totalParty].health;
-  //   if (enemyHealth <= 0 && partyHealth <= 0) {
-  //     //the game ends with game over screen
-  //   } else if (enemyHealth <= 0) {
-  //     //the game ends and move onto the next battle.
-  //   } else if (partyHealth <= 0) {
-  //     //the game ends with game over screen.
-  //   } else {
-  //     turn();
-  //   }
-  // }
+//   //             break;
+//   //           }
+//   //         }
   
-  // //listening for animation
-  // //listen for  -  on player status:ready
-  // //run turn();
-  // //in turn function run target
-  // //in target function, on player choice (button press), run choice(); function.
-  // //choice updates stats and plays animation and makes next choice.
+//   //         break;
+//   //       }
+//   //     }
+//   //   }
   
-  // function turn() {
-  //   console.log("turn");
+//   // //   battle();
   
-  //   //choose character, update status to Ready.
+//   // // }
+//   // //if alive = true, turn = true else
+//   // function changeTurn() {
+//   //   if (currentTurn === 0){
+//   //       currentTurn = 1;
+//   //   }else{
+//   //       currentTurn = 0;
+//   //   }
   
-  //   //update each player status.
+//       //   for (j = 0; j < party.length; j++) {
+//       //     if (party[j].turn == true) {
+//       //       totalParty = party.length - 1;
+//       //       party[j].turn == false;
+//       //       if (j == totalParty) {
+//       //         console.log("check 1")
+//       //         for (k = 0; k < party.length; k++) {
+//       //           if (party[k].alive == true) {
+//       //             party[k].turn == true;
+//       //             currentTurn == k;
+//       //             newTurn == true;
+//       //             console.log("check 2")
+//       //             break;
+//       //           }
+//       //         }
+//       //         if(newTurn == true){
+//       //           console.log("check 3")
+//       //         newTurn == false;
+//       //         break;
+//       //         }
   
-  //   //target();
+//       //       }
   
-  //   // for (i = 0; i < party.length; i++) {
-  //   //   if (party[i].turn == true) {
-  //   //     currentTurn = i;
-  //   //   }
-  //   // }
+//       //     } else{
+//       //       console.log("check 5")
+//       //       var checkNext = j + 1;
+//       //       for(m = checkNext; m < party.length; m++){
+//       //         console.log("check 5.1")
+//       //         if (party[m].alive == true) {
+//       //           console.log("check 6")
+//       //           party[m].turn == true;
+//       //           currentTurn == m;
+//       //           newTurn == true;
+//       //           break;
+//       //         }else if(party[totalParty].alive == false){
+//       //           console.log("check 7")
+//       //           for (p = 0; p < party.length; p++) {
+//       //             console.log("check 8")
+//       //             if (party[p].alive == true) {
+//       //               console.log("check 9")
+//       //               party[p].turn == true;
+//       //               currentTurn == p;
+//       //               newTurn == true;
+//       //               break;
+//       //               }
+//       //            }
+//       //         }
+//       //       }
+//       //       if(newTurn == true){
+//       //         console.log("check 10")
+//       //         newTurn == false;
+//       //         break;
+//       //     }
+//       //   }
+//       // }
+//       //   console.log("Whos Turn:" + currentTurn);
+//   //     console.log;;
+//   // //   battle();
+//   // // }
   
-  //   action();
-  // }
+//   // //checks if the battle is over, if not it runs another turn.
+//   // function battle() {
+//   //   console.log("started");
+//   //   updateStats();
   
-  // //choose character you to affect.
+//   //   //loop to add entire party health to check if they party has died.
+//   //   //allows for expansion of the part to more than 3 characters in the future.
   
-  // // function target() {
-  // //   $("body").on("click", "#action-btn", function() {
-  // //     choice = this.val();
-  // //     console.log(choice);
+//   //   for (k = 0; k < party.length - 1; k++) {
+//   //     partyHealth += party[k].health;
+//   //   }
+//   //   totalParty == party.length - 1;
+//   //   enemyHealth = party[totalParty].health;
+//   //   if (enemyHealth <= 0 && partyHealth <= 0) {
+//   //     //the game ends with game over screen
+//   //   } else if (enemyHealth <= 0) {
+//   //     //the game ends and move onto the next battle.
+//   //   } else if (partyHealth <= 0) {
+//   //     //the game ends with game over screen.
+//   //   } else {
+//   //     turn();
+//   //   }
+//   // }
   
-  // //     action(choice);
-  // //   });
-  // // }
+//   // //listening for animation
+//   // //listen for  -  on player status:ready
+//   // //run turn();
+//   // //in turn function run target
+//   // //in target function, on player choice (button press), run choice(); function.
+//   // //choice updates stats and plays animation and makes next choice.
   
-  // //choose what you want that character to do.
-  // function action() {
-  //   // for (i = 0; i < party.length; i++) {
-  //   //   if (party[i].turn == true) {
-  //   //     currentTurn == i;
-  //   //   }
-  //   // }
-  //   // whosTurn = party[currentTurn];
-  //   // console.log(currentTurn);
+//   // function turn() {
+//   //   console.log("turn");
   
-  //   // console.log("action");
+//   //   //choose character, update status to Ready.
   
-  //   // if (whosTurn.monster == true) 
-  //   if(currentTurn === 1){
-  //     window.setInterval(function() {
-  //         choice = Math.ceil(Math.random() * 2);
-  //         console.log("MONSTER TURN");
-  //         switch (choice) {
-  //           case 1:
-  //         attack();
+//   //   //update each player status.
   
-  //             console.log("that SOB attacked!");
+//   //   //target();
   
-  //             break;
+//   //   // for (i = 0; i < party.length; i++) {
+//   //   //   if (party[i].turn == true) {
+//   //   //     currentTurn = i;
+//   //   //   }
+//   //   // }
   
-  //           case 2:
-  //             console.log("that SOB healed!");
-  //           recover();
+//   //   action();
+//   // }
   
-  //             break;
-  //         //*BONUS 3 would be for special ability.
-  //       case 3:
-  //           break;
-  //         default:
-  //             console.log("It didn't work you muppit");
-  //           break;
-  //         }
+//   // //choose character you to affect.
   
-  //       }, 2000);
-  //   } else {
-  //     $("#action-btn").on("click", function() {
-  //       choice = $("#action-btn").val();
+//   // // function target() {
+//   // //   $("body").on("click", "#action-btn", function() {
+//   // //     choice = this.val();
+//   // //     console.log(choice);
   
-  //       switch (choice) {
-  //       case "attack":
-  //           attack();
+//   // //     action(choice);
+//   // //   });
+//   // // }
+  
+//   // //choose what you want that character to do.
+//   // function action() {
+//   //   // for (i = 0; i < party.length; i++) {
+//   //   //   if (party[i].turn == true) {
+//   //   //     currentTurn == i;
+//   //   //   }
+//   //   // }
+//   //   // whosTurn = party[currentTurn];
+//   //   // console.log(currentTurn);
+  
+//   //   // console.log("action");
+  
+//   //   // if (whosTurn.monster == true) 
+//   //   if(currentTurn === 1){
+//   //     window.setInterval(function() {
+//   //         choice = Math.ceil(Math.random() * 2);
+//   //         console.log("MONSTER TURN");
+//   //         switch (choice) {
+//   //           case 1:
+//   //         attack();
+  
+//   //             console.log("that SOB attacked!");
+  
+//   //             break;
+  
+//   //           case 2:
+//   //             console.log("that SOB healed!");
+//   //           recover();
+  
+//   //             break;
+//   //         //*BONUS 3 would be for special ability.
+//   //       case 3:
+//   //           break;
+//   //         default:
+//   //             console.log("It didn't work you muppit");
+//   //           break;
+//   //         }
+  
+//   //       }, 2000);
+//   //   } else {
+//   //     $("#action-btn").on("click", function() {
+//   //       choice = $("#action-btn").val();
+  
+//   //       switch (choice) {
+//   //       case "attack":
+//   //           attack();
             
-  //           console.log("KILL");
-  //           break;
+//   //           console.log("KILL");
+//   //           break;
   
-  //       case "recover":
-  //         console.log("HEAL");
-  //         recover();
+//   //       case "recover":
+//   //         console.log("HEAL");
+//   //         recover();
           
-  //         break;
-  //         //*BONUS 3 would be for special ability.
-  //       case 3:
-  //         break;
-  //       default:
-  //         console.log("It didn't work you muppit");
-  //         break;
-  //       }
-  //     });
-  //   }
-  //   changeTurn();
-  // }
+//   //         break;
+//   //         //*BONUS 3 would be for special ability.
+//   //       case 3:
+//   //         break;
+//   //       default:
+//   //         console.log("It didn't work you muppit");
+//   //         break;
+//   //       }
+//   //     });
+//   //   }
+//   //   changeTurn();
+//   // }
   
-  // function attack() {
-  //   diceRoll();
+//   // function attack() {
+//   //   diceRoll();
   
-  //   console.log("attack");
+//   //   console.log("attack");
   
-  //   if (whosTurn === true) {
-  //     switch (ranNum) {
-  //       case 1:
-  //         break;
-  //       case 2:
-  //         break;
-  //       case 3:
-  //         break;
-  //       case 4:
-  //         break;
-  //       default:
-  //         console.log("It didn't work you muppit");
-  //         break;
-  //     }
-  //   } else {
-  //   }
+//   //   if (whosTurn === true) {
+//   //     switch (ranNum) {
+//   //       case 1:
+//   //         break;
+//   //       case 2:
+//   //         break;
+//   //       case 3:
+//   //         break;
+//   //       case 4:
+//   //         break;
+//   //       default:
+//   //         console.log("It didn't work you muppit");
+//   //         break;
+//   //     }
+//   //   } else {
+//   //   }
   
-  //   changeTurn();
-  // }
+//   //   changeTurn();
+//   // }
   
-  // function recover() {
-  //   console.log("recover");
+//   // function recover() {
+//   //   console.log("recover");
   
-  //   changeTurn();
-  // }
+//   //   changeTurn();
+//   // }
   
-  // function diceRoll() {
-  //   ranNum = Math.ceil(Math.floor() * 20);
-  // }
+//   // function diceRoll() {
+//   //   ranNum = Math.ceil(Math.floor() * 20);
+//   // }
   
-  // function updateStats() {
-  //     console.log("updated stats");
-  // }
-  // battle();
+//   // function updateStats() {
+//   //     console.log("updated stats");
+//   // }
+//   // battle();
+// =======
+// function diceRoll() {
+
+//   ranNum = Math.ceil(Math.floor() * 20);
+// }
+
+// battle();
+
+// >>>>>>> 8cba4a45c2367a6315f2ccede522ae97ed2464d9

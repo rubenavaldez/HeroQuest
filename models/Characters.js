@@ -26,9 +26,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Characters.associate = function(models) {
-    Characters.hasMany(models.Players, {
-      onDelete: "cascade"
-    });
+    Characters.hasMany(models.Players, {});
   };
   return Characters;
 };

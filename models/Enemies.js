@@ -13,5 +13,13 @@ module.exports = function(sequelize, DataTypes) {
     strength: DataTypes.INTEGER,
     defense: DataTypes.INTEGER
   });
+  Enemies.associate = function(models) {
+    Enemies.belongsToMany(models.Players, {
+      through: models.CurrentGame,
+      foreignKey: "EnemyId",
+      otherKey: "PlayerId"
+    });
+  };
+
   return Enemies;
 };

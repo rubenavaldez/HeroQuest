@@ -1,34 +1,53 @@
 <div id="game" class="landing">
+    <button id="action-btn" value="attack">attack you clown!</button>
 
+    <button id="action-btn" value="recover">heal you clown!</button>
+    <button id="start-game" value="start">start</button>
+    {{!-- <p class="center-align">
+        <a id="start-game" href="" class="waves-effect waves-light btn-large red" value=1>
+            <i class="material-icons right">flare</i>
+            Start</a>
+    </p> --}}
     <div class="row game-row">
 <button id = "action-btn" value = "attack">attack you clown!</button>
 
 <button id = "action-btn" value = "recover">heal you clown!</button>
         <div class="col l6">
+
             {{#each Characters}}
-            
-            <div class="col s1 idle player">
-
-                <img class="player{{id}}-idle idle player active" data-health={{health}} data-strength={{strength}} data-defense={{defense}} src="{{image_idle}}" style="min-height:300.6px;">
 
 
+            <div class="col s1 player">
+
+
+
+                <div class="player-idle"><img class="player{{id}}-idle idle player PLAYERactive" data-health={{health}}
+                        data-strength={{strength}} data-defense={{defense}} src="{{image_idle}}"
+                        style="min-height:300.6px;">
+                        <div class="heal">
+                        <img src="https://i.imgur.com/xVjYfJK.gif" alt="potion">
+                        </div>
+                </div>
+                <div class="player-death">
+                    <img class="player{{id}}-death" src="{{image_death}}" style="min-height:300.6px;">
+
+                </div>
+                
             </div>
-            <div class="col s1 death">
-                <img class="player{{id}}-death" src="{{image_death}}" style="min-height:300.6px;">
-            </div>
-            
+
+
             {{/each}}
 
-            <div class="enemy-attack">
-                {{#each Enemies}}
-                <div class="col s1 idle enemy">
+            <div class="col s1 enemy-forward">
+                {{!-- {{#each Enemies}}
+                <div class="col s1 enemy-attack">
 
-                <img class="enemy{{id}}-idle enemy-attack enemy" src="{{image_attack}}" style="min-height:300.6px;">
+                    <img class="enemy{{id}}-idle enemy-attack enemy" src="{{image_attack}}" style="min-height:300.6px;">
 
 
-            </div>
+                </div>
 
-                {{/each}}
+                {{/each}} --}}
             </div>
         </div>
         <div class="col l6">
@@ -36,12 +55,34 @@
 
             <div class="col s1">
 
-                <img class="player{{id}}-attack attack" src="{{image_attack}}" style="min-height:300.6px;">
+                <img class="player{{id}}-attack player-attack" src="{{image_attack}}" style="min-height:300.6px;">
 
 
             </div>
             {{/each}}
+            {{!-- {{#each Enemies}} --}}
 
+            <div class="col s1 enemy enemy-visible-div">
+
+
+
+
+
+
+
+{{!-- 
+                <div class="enemy-idle"><img class="enemy{{id}}-idle idle enemy active" data-health={{health}}
+                        data-strength={{strength}} data-defense={{defense}} src="{{image_idle}}"
+                        style="min-height:300.6px;">
+                </div>
+                <div class="enemy-death">
+                    <img class="player{{id}}-death" src="{{image_death}}" style="min-height:300.6px;">
+                </div>--}}
+
+            </div> 
+
+
+            {{!-- {{/each}} --}}
 
         </div>
 
@@ -49,14 +90,11 @@
 
 </div>
 
-
-
-
-
-
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 <script src="/js/index.js"></script>
 <script src="/js/materialize.js"></script>
+
 <script src="/js/game.js"></script>
 <script src="/js/jquery.js"></script>
+
