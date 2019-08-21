@@ -1,5 +1,5 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "handlebars-boilerplate",
   "version": "1.0.0",
   "description": "Project 2 Starter",
   "main": "server.js",
@@ -15,7 +15,9 @@
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
     "mysql2": "^1.6.5",
-    "sequelize": "^5.8.6"
+    "nodemon": "^1.19.1",
+    "sequelize": "^5.15.0",
+    "travis": "^0.1.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -26,5 +28,17 @@
     "eslint-plugin-prettier": "^3.1.0",
     "mocha": "^6.1.4",
     "prettier": "^1.17.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubenavaldez/Group-Project-Two.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/rubenavaldez/Group-Project-Two/issues"
+  },
+  "homepage": "https://github.com/rubenavaldez/Group-Project-Two#readme"
 }

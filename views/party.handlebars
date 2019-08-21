@@ -1,0 +1,42 @@
+<div id="firepit" class="landing">
+
+  <h2 class="white-text center">{{msg}}</h2>
+  <div class="row" style="margin-bottom: 500px"></div>
+  <div class="row">
+    {{#each Characters}}
+   
+    <div class="col s4">
+      <div class="card">
+
+        <div class="card-image red">
+          <img src="{{image_run}}" style="min-height:300.6px;">
+          <span class="card-title">{{name}}</span>
+        </div>
+        <div class="card-content">
+          <p>{{bio}} db bio</p>
+          <p>Health: {{health}}</p>
+          <p>Strength: {{strength}}</p>
+          <p>Defense:{{defense}}</p>
+          
+        </div>
+        <div class="card-action">
+          {{!-- <button class="btn-large green recruit-button" value="{{id}}">Recruit</button> --}}
+            {{>user-input/recruit}}
+
+        </div>
+      </div>
+    </div>
+    {{/each}}
+</div>
+
+</div>
+</div>
+
+</div>
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/materialize.js"></script>
