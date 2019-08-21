@@ -1,8 +1,5 @@
 //import { start } from "repl";
 
-
-//CHANGE
-
 playerOne = {
   name: name,
   health: 100,
