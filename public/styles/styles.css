@@ -95,6 +95,7 @@ h1,h2, .brand-logo {
   position: absolute;
   overflow: visible;
   margin-left:15px; 
+  z-index: auto;
 } 
 .enemy, .enemy-attack {
   position: absolute;
@@ -112,4 +113,8 @@ h1,h2, .brand-logo {
     position: relative;
     top: 160px;
     left: 250px;
+  }
+
+  #game-over{
+    background: url(https://imgur.com/Imiy5cj)
   }
