@@ -1,11 +1,15 @@
 /* eslint-disable no-unused-vars */
+var enemySelect;
 var interval;
-$(".death").hide();
+var enemyHealth;
+var enemyStrength;
+var enemyDefense;
+$(".player-death").hide();
 $(".heal").hide();
 $(document).ready(function() {
   console.log("jQuery");
-  $(".attack").hide();
-  $(".death").hide();
+  $(".player-attack").hide();
+  $(".player-death").hide();
   $(".heal").hide();
 });
 
@@ -21,8 +25,8 @@ $(document).on("click", "#action-btn", function() {
 
   if ($(this).attr("value") === "attack") {
     console.log("attacking");
-    $(".idle").hide();
-    $(".attack").show();
+    $(".player-idle").hide();
+    $(".player-attack").show();
     setTimeout(attackAnimation, 1000);
   } else if ($(this).attr("value") === "recover") {
     console.log("recovering");
@@ -32,31 +36,33 @@ $(document).on("click", "#action-btn", function() {
 });
 
 function attackAnimation() {
-  $(".idle").show();
-  $(".attack").hide();
+  $(".player-idle").show();
+  $(".player-attack").hide();
 }
 
 $(document).on("click", "#start-game", function() {
   console.log($(this).attr("value"));
-  enemySelect = 1;
-  queryURL = "/api/enemies/" + enemySelect;
-  console.log(queryURL)
+  enemySelect = 0;
+  queryURL = "/api/enemies/";
+  console.log(queryURL);
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(enemy) {
-
+    //Enemy attack
     attackingDiv = $(".enemy-forward");
     attackAnimationDiv = $("<div>");
     attackAnimationDiv.attr(
       "class",
       "enemy" + enemySelect + "-idle enemy-attack enemy"
     );
-    attackAnimationDiv.attr("src", enemy.image_attack);
-    attackAnimationDiv.attr("style", "min-height:300.6px;");
+    enemyAttackImage = $("img")
+    enemyAttackImage.attr("src", enemy[enemySelect].image_attack);
+    enemyAttackImage.attr("style", "min-height:300.6px;");
     console.log(attackAnimationDiv);
+    attackAnimationDiv.append(enemyAttackImage);
     attackingDiv.append(attackAnimationDiv);
-
+    //Enemy idle
     enemyVisibleDiv = $(".enemy-visible-div");
     enemyIdleDiv = $("<div>");
     enemyIdleDiv.attr("class", "enemy-idle");
@@ -65,19 +71,22 @@ $(document).on("click", "#start-game", function() {
       "class",
       "enemy" + enemySelect + "-idle idle enemy active"
     );
-    enemyIdleImage.attr("data-health", enemy.health);
-    enemyHealth = enemy.health;
-    enemyIdleImage.attr("data-strength", enemy.strength);
-    enemyIdleImage.attr("data-defense", enemy.defense);
-    enemyIdleImage.attr("src", enemy.death);
+    enemyIdleImage.attr("data-health", enemy[enemySelect].health);
+    enemyHealth = enemy[enemySelect].health;
+    enemyIdleImage.attr("data-strength", enemy[enemySelect].strength);
+    enemyIdleImage.attr("data-defense", enemy[enemySelect].defense);
+    enemyIdleImage.attr("src", enemy[enemySelect].image_idle);
     enemyIdleImage.attr("style", "min-height:300.6px");
     enemyIdleDiv.append(enemyIdleImage);
 
-
+    //Enemy Death
     enemyDeathDiv = $("<div>");
     enemyDeathImage = $("<img>");
-    enemyDeathImage.attr("class", "player" + enemySelect + "-death");
-    enemyDeathImage.attr("src", enemy.image_death);
+    enemyDeathImage.attr(
+      "class",
+      "player" + enemySelect + "-death enemy-death"
+    );
+    enemyDeathImage.attr("src", enemy[enemySelect].image_death);
     enemyDeathImage.attr("style", "min-height:300.6px;");
     enemyDeathDiv.append(enemyDeathImage);
     enemyVisibleDiv.append(enemyIdleDiv);
@@ -85,9 +94,13 @@ $(document).on("click", "#start-game", function() {
     $("enemy-attack").hide();
     $("enemy-death").hide();
     $("enemy-idle").show();
+    $(".player-attack").hide();
+    $(".player-death").hide();
+    $(".heal").hide();
+    $("player-idle").show();
     console.log(enemy);
   });
-  enemySelect++;
+  // enemySelect++;
 });
 
 function healAnimation() {

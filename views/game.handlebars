@@ -23,14 +23,14 @@
 
 
 
-                <div class="idle"><img class="player{{id}}-idle idle player active" data-health={{health}}
+                <div class="player-idle"><img class="player{{id}}-idle idle player PLAYERactive" data-health={{health}}
                         data-strength={{strength}} data-defense={{defense}} src="{{image_idle}}"
                         style="min-height:300.6px;">
                         <div class="heal">
                         <img src="https://i.imgur.com/xVjYfJK.gif" alt="potion">
                         </div>
                 </div>
-                <div class="death">
+                <div class="player-death">
                     <img class="player{{id}}-death" src="{{image_death}}" style="min-height:300.6px;">
 
                 </div>
@@ -57,7 +57,7 @@
 
             <div class="col s1">
 
-                <img class="player{{id}}-attack attack" src="{{image_attack}}" style="min-height:300.6px;">
+                <img class="player{{id}}-attack player-attack" src="{{image_attack}}" style="min-height:300.6px;">
 
 
             </div>
@@ -97,4 +97,4 @@
 <script src="/js/index.js"></script>
 <script src="/js/materialize.js"></script>
 <script src="/js/jquery.js"></script>
-<script src="/js/game.js"></script>
+{{!-- <script src="/js/game.js"></script> --}}

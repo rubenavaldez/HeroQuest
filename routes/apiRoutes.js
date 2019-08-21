@@ -1,20 +1,16 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get("/api/enemies/:id", function(req, res) {
-    var query = {};
-    if (req.params.id) {
-      query = req.params.id;
-    } else {
-      console.log("default is one");
-      query = 1;
-    }
-    console.log(req.params)
-    db.Enemies.findOne({
-      where: {
-        id: query
-      }
-    }).then(function(req) {
+  app.get("/api/enemies/", function(req, res) {
+    // var query = {};
+    // if (req.params.id) {
+    //   query = req.params.id;
+    // } else {
+    //   console.log("default is one");
+    //   query = 1;
+    // }
+    // console.log(req.params)
+    db.Enemies.findAll({}).then(function(req) {
       res.json(req);
     });
   });
