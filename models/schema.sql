@@ -1,15 +1,9 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
-
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
-
 drop database if exists heroquest;
 create database heroquest;
 use heroquest;
 
 create table characters(
-id integer(10) primary key auto_increment,
+id integer(10) auto_increment not null,
 name varchar(30) not null, 
 bio varchar(500),
 image_idle varchar(50),
@@ -22,8 +16,9 @@ defense INTEGER(10),
 monster BOOLEAN,
 alive BOOLEAN,
 turn BOOLEAN,
-createdAt timestamp default	current_timestamp,
-updatedAt timestamp default current_timestamp
+createdAt timestamp default	current_timestamp not null,
+updatedAt timestamp default current_timestamp,
+primary key(id)
 );
 
 insert into characters(name, image_idle, image_run, image_attack, image_death, health, strength, defense, monster, alive)
@@ -34,9 +29,8 @@ values("Barbarian", "https://i.imgur.com/GKO9WhP.gif", "https://i.imgur.com/cS5s
 ("Necromancer","https://i.imgur.com/o7pW0kT.gif", "https://i.imgur.com/tv0MEWe.gif", "https://i.imgur.com/LOVLIv5.gif","https://i.imgur.com/E7iNOUO.gif", 400, 80, 40,0,1), 
 ("Sorceress","https://i.imgur.com/DIY3unz.gif","https://i.imgur.com/Q4xywSQ.gif", "https://i.imgur.com/rfzv6c3.gif", "https://i.imgur.com/0J1alLM.gif", 300, 70, 40,0,1);  
  
-
 create table enemies(
-id integer(10) primary key auto_increment,
+id integer(10) auto_increment,
 name varchar(30) not null, 
 image_idle varchar(50),
 image_attack varchar(50),
@@ -49,7 +43,8 @@ monster BOOLEAN,
 alive BOOLEAN,
 turn BOOLEAN,
 createdAt timestamp default	current_timestamp,
-updatedAt timestamp default current_timestamp
+updatedAt timestamp default current_timestamp,
+primary key(id)
 );
 
 insert into enemies(name, image_idle, image_run, image_attack, image_death, health, strength, defense, monster, alive)
