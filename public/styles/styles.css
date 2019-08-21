@@ -74,7 +74,7 @@ h1,h2, .brand-logo {
 
 }
 #game {
-  
+  /* dragon wallpaper https://i.imgur.com/RkA4J1m.gif */
   background: url("https://i.imgur.com/Ul1aJyw.png") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -96,6 +96,11 @@ h1,h2, .brand-logo {
   overflow: visible;
   margin-left:15px; 
 } 
+.enemy, .enemy-attack {
+  position: absolute;
+  overflow: visible;
+  margin-top: 100px;
+}
 .death {
   position: relative;
   left:100;
@@ -103,4 +108,8 @@ h1,h2, .brand-logo {
   overflow: visible;
 
 }
-  
+  .heal {
+    position: relative;
+    top: 160px;
+    left: 250px;
+  }

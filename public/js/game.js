@@ -1,6 +1,5 @@
 //import { start } from "repl";
 
-//CHANGE
 
 playerOne = {
   name: name,
@@ -205,7 +204,9 @@ function turn() {
 function action() {
   whosTurn = party[currentTurn];
 
+
   console.log("action");
+
 
   if (whosTurn.monster == true) {
     choice === Math.ceil(Math.random() * 2);
@@ -288,7 +289,9 @@ function recover() {
 }
 
 function diceRoll() {
+
   ranNum = Math.ceil(Math.floor() * 20);
 }
 
 battle();
+

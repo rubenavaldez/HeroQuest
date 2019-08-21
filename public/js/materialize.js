@@ -1,4 +1,4 @@
 $(document).ready(function() {
-  console.log("materialize")
+  console.log("materialize");
   $(".dropdown-trigger").dropdown();
 });
