@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+
 var enemySelect;
 var interval;
 var enemyHealth;
@@ -40,6 +41,7 @@ $(document).ready(function() {
   $(document).on("click", "#action-btn", function() {
     console.log($(this).attr("value"));
     clearInterval(interval);
+
 
     if ($(this).attr("value") === "attack") {
       console.log("attacking");
