@@ -1,7 +1,6 @@
 {
   "development": {
     "username": "root",
-
     "password": "Monkey",
     "database": "heroquest",
     "host": "localhost",
