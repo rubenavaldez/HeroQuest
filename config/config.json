@@ -1,9 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "rootroot",
-    "database": "exampledb",
-    "password": "rootroot",
+
+    "password": "Monkey",
     "database": "heroquest",
     "host": "localhost",
     "dialect": "mysql"
