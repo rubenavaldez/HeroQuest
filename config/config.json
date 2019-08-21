@@ -1,6 +1,7 @@
 {
   "development": {
     "username": "root",
+
     "password": "Monkey",
     "database": "heroquest",
     "host": "localhost",
@@ -8,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "Th3Riddl3r?",
+    "password": "rootroot",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
