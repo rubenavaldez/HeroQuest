@@ -64,10 +64,10 @@ function action() {
       console.log("Mistakes were made");
       break;
     };
-  var enemyTurn = window.setTimeout(function() {
+      window.setTimeout(function() {
       enemyChoice = Math.ceil(Math.random() * 2);
       console.log("MONSTER TURN");
-      switch (enemyTurn) {
+      switch (enemyChoice) {
       case 1:
         attack();
         break;
@@ -112,6 +112,13 @@ function updateStats() {
     changeTurn();
   }
 }
+
+function attack(){
+};
+
+function heal(){
+};
+
 
 
 // function changeTurn() {
