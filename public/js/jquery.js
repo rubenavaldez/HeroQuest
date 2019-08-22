@@ -7,7 +7,7 @@ var deathTime;
 
 $(window).on("load", function() {
   console.log($(this).attr("value"));
-  enemySelect = 2;
+  enemySelect = 0;
   queryURL = "/api/enemies/";
   console.log(queryURL);
   $.ajax({
@@ -85,6 +85,8 @@ $(window).on("load", function() {
       $(".player-idle").hide();
       $(".player-attack").show();
       setTimeout(attackAnimation, 1000);
+      //demo enemy
+      setTimeout(enemyAttack, 2000);
     } else if ($(this).attr("value") === "recover") {
       console.log("recovering");
       $(".heal").show();
@@ -128,4 +130,4 @@ function deathTimer(){
 
 }
 
-deathTimer(enemySelect)
+deathTimer(enemySelect);
