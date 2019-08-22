@@ -1,7 +1,3 @@
-drop database if exists heroquest;
-create database heroquest;
-use heroquest;
-
 create table characters(
 id integer(10) auto_increment not null,
 name varchar(30) not null, 
