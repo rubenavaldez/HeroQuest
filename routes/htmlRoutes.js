@@ -72,6 +72,10 @@ module.exports = function(app) {
     console.log("campaign");
     res.render("campaign", {});
   });
+  app.get("/gameover", function(req, res) {
+    console.log("gameover");
+    res.render("gameover", {});
+  });
 
   // Render 404 page for any unmatched routes
   //must be last in the code 

@@ -56,13 +56,14 @@ h1,h2, .brand-logo {
 }
 
 #error-screen {
-  
+  width: 100%; 
   background: url("https://i.imgur.com/llSgMO5.gif") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 
+margin-top:10px;
 }
 #campaign {
   
@@ -95,6 +96,7 @@ h1,h2, .brand-logo {
   position: absolute;
   overflow: visible;
   margin-left:15px; 
+  z-index: auto;
 } 
 .enemy, .enemy-attack {
   position: absolute;
@@ -112,4 +114,8 @@ h1,h2, .brand-logo {
     position: relative;
     top: 160px;
     left: 250px;
+  }
+
+  #game-over {
+    background: url(https://i.kinja-img.com/gawker-media/image/upload/k5dlwatkptfaoove407d.gif) no-repeat center center fixed;
   }
