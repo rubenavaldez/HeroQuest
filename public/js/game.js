@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 playerOne = {
   name: name,
   health: 100,
@@ -54,7 +54,7 @@ function action() {
 
   if (currentTurn == playerBeforeEnemy){
     switch (choice) {
-    case "attack":
+      case "attack":
       attack();
       break;
     case "heal":
